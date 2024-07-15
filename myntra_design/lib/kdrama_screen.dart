@@ -22,6 +22,11 @@ class KdramaScreen extends StatelessWidget {
           'https://www.thetoughtackle.com/wp-content/uploads/2023/01/Island-Kdrama-2.jpg'
     },
     {
+      'name': 'To all the guys who loved me',
+      'image':
+          'https://www.hellokpop.com/wp-content/uploads/2020/11/seo-ji-hoon-kdramadiary.jpg'
+    },
+    {
       'name': 'Vincenzo',
       'image':
           'https://assets.vogue.in/photos/6126002a6b9d539ed2dfd1c2/master/pass/stylish-k-drama-characters.jpg'
@@ -30,6 +35,11 @@ class KdramaScreen extends StatelessWidget {
       'name': 'My demon',
       'image':
           'https://i.pinimg.com/736x/73/f0/b4/73f0b43a6b3092edda3a1338e20b6e67.jpg'
+    },
+    {
+      'name': 'Goblin',
+      'image':
+          'https://i.pinimg.com/originals/d0/3f/ab/d03fabbf50ce049b384d941af0f9b887.jpg'
     },
   ];
 

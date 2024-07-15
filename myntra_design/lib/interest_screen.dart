@@ -8,6 +8,25 @@ class InterestsScreen extends StatefulWidget {
 class _InterestsScreenState extends State<InterestsScreen> {
   List<String> interests = ['Bollywood', 'Hollywood', 'K Dramas', 'Anime'];
   List<bool> selectedInterests = [false, false, false, false];
+  void showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Selection Required'),
+          content: Text('Please select at least one interest.'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +70,11 @@ class _InterestsScreenState extends State<InterestsScreen> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Handle the select button press
-                  Navigator.of(context).pop();
+                  if (selectedInterests.contains(true)) {
+                    Navigator.pop(context);
+                  } else {
+                    showAlertDialog(context);
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.pink,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:myntra_design/chaalenge.dart';
+import 'package:myntra_design/challenge_screen.dart';
 import 'package:myntra_design/interest_screen.dart';
 import 'package:myntra_design/preferences_collection.dart';
 
@@ -63,14 +65,18 @@ class _HomePageState extends State<HomePage> {
   ];
 
   List<String> items2 = [
+    "https://media.gq.com/photos/5873faf2b745bdd2729582ff/master/pass/170107_LCMFW17_DR07-6736.jpg",
     "https://assets.vogue.in/photos/6126002a6b9d539ed2dfd1c2/master/pass/stylish-k-drama-characters.jpg",
+    "https://th.bing.com/th/id/OIP.0QSp0zhfU13ctqygCKWXGAAAAA?rs=1&pid=ImgDetMain",
     "https://cdn.thevoiceoffashion.com/article_images/banner2-60c1e60ace8c0.jpg",
+    "https://th.bing.com/th/id/OIP.R3yhKDqQkLDU6wk7EwY-fQAAAA?rs=1&pid=ImgDetMain",
     "https://miro.medium.com/v2/resize:fit:1400/1*XgDcqApmRCFGiz_U7gT8dw.jpeg",
+    "https://i.pinimg.com/originals/e5/04/7e/e5047e43f7d0d613ba51a58dbc2fcea3.jpg",
   ];
   List<String> appBarTitles = [
     "Home",
     "Play",
-    "Trophy",
+    "Challenges",
     "Collections",
     "Hashtag",
     "Profile"
@@ -78,7 +84,7 @@ class _HomePageState extends State<HomePage> {
   List<Color> appBarColors = [
     Color.fromARGB(255, 255, 95, 148),
     Colors.blue,
-    Colors.green,
+    Color.fromARGB(255, 255, 95, 148),
     Colors.white,
     Colors.pink,
     Colors.purple,
@@ -172,20 +178,16 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold),
             ),
           ),
+
           SizedBox(
             height: 10,
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.30,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      image: AssetImage("assets/ad.jpg"), fit: BoxFit.fill)),
-            ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.39,
+            width: double.infinity,
+            child: Challenge(),
           ),
+          // Challenge()
         ],
       ),
     );
@@ -204,7 +206,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> pages = [
       buildHomePage(), // First page
       Container(color: Colors.blue), // Second page
-      Container(color: Colors.green),
+      ChallengeScreen(),
       PreferencesCollection(),
       Container(
         color: Colors.pink,

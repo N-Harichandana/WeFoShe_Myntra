@@ -16,6 +16,7 @@ class _PreferencesCollectionState extends State<PreferencesCollection> {
     "Bollywood",
     "Hollywood",
     "Anime",
+    "Your Vibe",
   ];
 
   int _selectedCategory =
